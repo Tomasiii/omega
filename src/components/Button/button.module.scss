@@ -1,0 +1,52 @@
+@import "src/assets/styles/variables";
+
+.button {
+  display: inline-block;
+
+  box-sizing: border-box;
+  text-transform: capitalize;
+  padding: 10px 24px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+
+  border: none;
+  border-radius: 3px;
+
+  line-height: 150.68%;
+  font-size: 20px;
+}
+
+.primary {
+  color: white;
+  background-color: $primary;
+}
+
+.primary:hover {
+  background-color: lighten($primary, 10);
+}
+
+.ghost {
+  color: $primary;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  background: none;
+  padding: 10px 5px;
+}
+
+.ghost:hover {
+  background-color: #eceaea;
+}
+
+.arrow {
+  transition: all 0.2s ease;
+
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.up {
+  transform: rotate(180deg);
+}

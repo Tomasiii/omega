@@ -1,0 +1,24 @@
+.footer{
+  display: flex;
+  align-items: center;
+  background-color: #2C313A;
+  height: 63px;
+  color:white;
+  &__date{
+    flex: 1 auto auto;
+  }
+  &__contacts{
+    a{
+
+      &:not(:last-child){
+        margin-right:15px ;
+      }
+      svg{
+        transition: all 0.2s ease;
+        &:hover{
+          transform: scale(1.15);
+        }
+      }
+    }
+  }
+}
