@@ -32,7 +32,6 @@ export const Card = ({ data, showButton = true }: IProps) => {
 						width={274}
 						height={167}
 						alt={title}
-						placeholder="blur"
 					/>
 				</a>
 			</Link>
