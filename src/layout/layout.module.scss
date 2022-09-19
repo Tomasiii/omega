@@ -1,0 +1,27 @@
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  grid-template-areas:
+		"header"
+		"body"
+		"footer";
+}
+
+.header {
+  grid-area: header;
+  background: url("../../public/images/header_bg.jpg");
+  background-size: cover;
+
+}
+.body {
+  grid-area: body;
+  padding-top: 61px;
+
+}
+
+.footer {
+  grid-area: footer;
+  background-color:  #2C313A;
+}
