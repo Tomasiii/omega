@@ -1,0 +1,59 @@
+@import "src/assets/styles/variables";
+
+.header__top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $headerHeight;
+  gap:30px;
+}
+
+.header__content{
+ display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__icon{
+  display: none;
+  z-index: 5;
+}
+
+.header__navigation{
+  transition: all 0.2s ease;
+  display: block;
+}
+
+
+@media screen and (max-width: 768px) {
+  .header__navigation{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(-100vw - 15px);
+    width: calc(100vw + 15px);
+    background-color: black;
+    z-index: 5;
+    overflow: auto;
+  }
+
+  .header__navigation_active{
+    left: 0;
+  }
+
+  .header__icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px;
+
+    cursor: pointer;
+
+    border: none;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+    background-color: #FFFFFF;
+  }
+}
+

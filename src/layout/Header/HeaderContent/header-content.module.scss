@@ -1,0 +1,63 @@
+@import "src/assets/styles/mixins";
+
+.index{
+  position: relative;
+  display: inline-block;
+  margin: 83px 0 113px 0;
+  max-width: 462px;
+  text-align: center;
+
+  svg{
+    position: absolute;
+    top:25px;
+    left: -102.5px;
+  }
+
+  &__title{
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 108.95%;
+    color: #FFFFFF;
+  }
+  &__text{
+    margin: 31px auto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140.76%;
+    text-align: center;
+    color:white;
+  }
+  &__button{
+    background-color: #931430;
+    &:hover {
+      background-color: lighten(#931430, 10);
+    }
+  }
+}
+
+.inner{
+  @include adaptiveValue('margin-top', 90, 20, 1000,320,1);
+  @include adaptiveValue('margin-bottom', 160, 40, 1000,320,1);
+  .inner__title{
+    margin: 0;
+    @include adaptiveValue('width', 704, 250, 1300,320,1);
+    @include adaptiveValue('font-size', 38, 28, 1000,320,1);
+    font-weight: 700;
+    text-align: center;
+    @include adaptiveValue('line-height', 52, 35, 1000,320,1);
+    color:#fff;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .index{
+    @include adaptiveValue('margin-top', 40, 20, 675,320,1);
+    @include adaptiveValue('margin-bottom', 80, 50, 675,320,1);
+    svg{
+      display: none;
+    }
+    &__title{
+      @include adaptiveValue('font-size', 38, 30, 675,320,1);
+    }
+  }
+}
