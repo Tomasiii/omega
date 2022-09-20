@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import {memo, useCallback, useState} from 'react'
+import {useCallback, useState} from 'react'
 
 import { Button } from '@/components'
 
@@ -15,7 +15,7 @@ interface IProps {
 	data: ICard
 }
 
-export const Card = memo(({ data }: IProps) => {
+export const Card = ({ data }: IProps) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const { text, title, src, id } = data
 	const {pathname} = useRouter()
@@ -52,4 +52,5 @@ export const Card = memo(({ data }: IProps) => {
 			</div>
 		</article>
 	)
-})
+}
+
