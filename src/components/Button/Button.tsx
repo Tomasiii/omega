@@ -6,12 +6,12 @@ import s from './button.module.scss'
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	appearance: 'primary' | 'ghost'
-	arrow?: 'up' | 'down' | 'none'
+	arrow?: 'up' | 'down' | false
 }
 
 export const Button = ({
 	appearance,
-	arrow = 'none',
+	arrow = false,
 	children,
 	className,
 	...props
@@ -24,7 +24,7 @@ export const Button = ({
 			})}
 			{...props}
 		>
-			{arrow !== 'none' && (
+			{arrow && (
 				<span
 					className={cn(s.arrow, {
 						[s.up]: arrow === 'up',

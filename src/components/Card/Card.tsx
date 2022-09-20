@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useCallback, useState } from 'react'
+import {memo, useCallback, useState} from 'react'
 
 import { Button } from '@/components'
 
@@ -9,16 +9,16 @@ import { maxLength } from '@/utils/string/maxLength'
 import { ICard } from '@/utils/types/app.types'
 
 import s from './card.module.scss'
+import {useRouter} from "next/router";
 
 interface IProps {
 	data: ICard
-	showButton?: boolean
 }
 
-export const Card = ({ data, showButton = true }: IProps) => {
+export const Card = memo(({ data }: IProps) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const { text, title, src, id } = data
-
+	const {pathname} = useRouter()
 	const toggleText = useCallback(() => {
 		setIsOpen((prevState) => !prevState)
 	}, [])
@@ -40,10 +40,10 @@ export const Card = ({ data, showButton = true }: IProps) => {
 				<p className={cn(s.card__text, { [s.card__text_open]: isOpen })}>
 					{maxLength(text, 212)}
 				</p>
-				{showButton && (
+				{pathname === '/' && (
 					<Button
 						appearance="ghost"
-						arrow={isOpen ? 'up' : 'down'}
+						arrow={(isOpen ? 'up' : 'down')}
 						onClick={toggleText}
 					>
 						Show {isOpen ? 'Less' : 'More'}
@@ -52,4 +52,4 @@ export const Card = ({ data, showButton = true }: IProps) => {
 			</div>
 		</article>
 	)
-}
+})

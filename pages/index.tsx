@@ -26,7 +26,6 @@ export const getStaticProps: GetStaticProps = async () => {
     const { data: cards } = await AppService.getCards()
     return {
       props: { cards: cards.cards },
-      revalidate: 60,
     }
   } catch {
     return {

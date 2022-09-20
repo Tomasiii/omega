@@ -9,6 +9,12 @@
     text-align: center;
     margin-bottom: 30px;
   }
+  &__short{
+    height: 450px;
+    :global(.slick-dots) {
+      bottom:30px;
+    }
+  }
 }
 
 .slick__container_custom{
