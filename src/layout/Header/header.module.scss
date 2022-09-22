@@ -8,8 +8,15 @@
   gap:30px;
 }
 
+.header__logo{
+  display: inline-block;
+  position: relative;
+  left: -5px;
+  top:4px;
+}
+
 .header__content{
- display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -30,8 +37,8 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: calc(-100vw - 15px);
-    width: calc(100vw + 15px);
+    left: calc(-100vw - 30px);
+    width: calc(100vw + 30px);
     background-color: black;
     z-index: 5;
     overflow: auto;

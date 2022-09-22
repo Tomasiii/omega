@@ -22,7 +22,7 @@ const Header = ({ className, ...props }: IProps) => {
 			<div className={'header__container'}>
 				<div className={s.header__top}>
 					<Link href="/">
-						<a aria-label="Logotype">
+						<a aria-label="Logotype" className={s.header__logo}>
 							<Image
 								src="/images/logo.png"
 								width={184}

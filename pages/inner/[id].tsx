@@ -26,7 +26,7 @@ const Inner: NextPage<IProps> = ({ cards, currentCard }: IProps) => {
 				></div>
 				<Button appearance="primary">Download Full Report</Button>
 			</section>
-			<Cards cardsItems={cards} />
+			<Cards cardsItems={cards} className={s.inner__cards} />
 		</>
 	)
 }
