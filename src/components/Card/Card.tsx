@@ -1,6 +1,7 @@
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useCallback, useState } from 'react'
 
 import { Button } from '@/components'
@@ -17,6 +18,7 @@ interface IProps {
 
 export const Card = ({ data, showButton = true }: IProps) => {
 	const [isOpen, setIsOpen] = useState(false)
+	const { pathname } = useRouter()
 	const { text, title, src, id } = data
 
 	const toggleText = useCallback(() => {
@@ -27,12 +29,7 @@ export const Card = ({ data, showButton = true }: IProps) => {
 		<article className={s.card}>
 			<Link href={'/inner/' + id}>
 				<a aria-label={'Read more about' + title}>
-					<Image
-						src={src}
-						width={274}
-						height={167}
-						alt={title}
-					/>
+					<Image src={src} width={274} height={167} alt={title} />
 				</a>
 			</Link>
 			<div className={s.card__content}>
@@ -40,11 +37,12 @@ export const Card = ({ data, showButton = true }: IProps) => {
 				<p className={cn(s.card__text, { [s.card__text_open]: isOpen })}>
 					{maxLength(text, 212)}
 				</p>
-				{showButton && (
+				{pathname === '/' && (
 					<Button
 						appearance="ghost"
 						arrow={isOpen ? 'up' : 'down'}
 						onClick={toggleText}
+						className={s.card__button}
 					>
 						Show {isOpen ? 'Less' : 'More'}
 					</Button>

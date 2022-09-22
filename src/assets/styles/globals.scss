@@ -14,7 +14,7 @@ body {
   position: relative;
 }
 
-[class*='__container'] {
+[class$='__container'] {
   max-width: 1168px;
   box-sizing: content-box;
   margin: 0 auto;

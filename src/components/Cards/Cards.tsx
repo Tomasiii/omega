@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import { HTMLAttributes } from 'react'
 import Slider from 'react-slick'
 
 import { Card } from '@/components'
@@ -7,7 +8,7 @@ import { ICard } from '@/utils/types/app.types'
 
 import s from './cards.module.scss'
 
-interface IProps {
+interface IProps extends HTMLAttributes<HTMLDivElement> {
 	cardsItems: ICard[]
 }
 
@@ -40,10 +41,10 @@ const settings = {
 	],
 }
 
-export const Cards = ({ cardsItems }: IProps) => {
+export const Cards = ({ cardsItems, className = '' }: IProps) => {
 	const { pathname } = useRouter()
 	return (
-		<div>
+		<div className={className}>
 			{pathname !== '/' && (
 				<div className={s.cards__title}>Related Insights</div>
 			)}

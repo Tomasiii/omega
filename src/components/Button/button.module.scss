@@ -1,8 +1,8 @@
 @import "src/assets/styles/variables";
 
 .button {
-  display: inline-block;
-
+  display: inline-flex;
+  align-items: center;
   box-sizing: border-box;
   text-transform: capitalize;
   padding: 10px 24px;
@@ -28,6 +28,7 @@
 }
 
 .ghost {
+  font-family: 'Work Sans', sans-serif;
   color: $primary;
   font-weight: 700;
   font-size: 13px;
@@ -44,7 +45,7 @@
   transition: all 0.2s ease;
 
   display: inline-block;
-  margin-right: 12px;
+  margin-right: 9px;
 }
 
 .up {

@@ -1,11 +1,14 @@
 .inner{
   margin-bottom: 50px;
   &__text{
-    margin-bottom: 25px;
+    margin-top:9px;
+    margin-bottom: 41px;
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
     color: #79808E;
-
+  }
+  &__cards{
+    margin-bottom: -13px;
   }
 }

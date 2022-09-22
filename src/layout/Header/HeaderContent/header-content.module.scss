@@ -2,15 +2,17 @@
 
 .index{
   position: relative;
+  left:14px;
   display: inline-block;
-  margin: 83px 0 113px 0;
-  max-width: 462px;
+  margin: 49px 0 113px 0;
   text-align: center;
+  max-width: 461.68px;
 
   svg{
     position: absolute;
-    top:25px;
+    top:23px;
     left: -102.5px;
+    pointer-events: none;
   }
 
   &__title{
@@ -20,7 +22,7 @@
     color: #FFFFFF;
   }
   &__text{
-    margin: 31px auto;
+    margin: 27px auto 31px;
     font-weight: 400;
     font-size: 16px;
     line-height: 140.76%;
@@ -28,7 +30,11 @@
     color:white;
   }
   &__button{
+    width: 165px;
+    padding: 10px 32px;
     background-color: #931430;
+    font-family: 'Work Sans', sans-serif;
+
     &:hover {
       background-color: lighten(#931430, 10);
     }
@@ -36,10 +42,10 @@
 }
 
 .inner{
-  @include adaptiveValue('margin-top', 90, 20, 1000,320,1);
+  @include adaptiveValue('margin-top', 107, 20, 1000,320,1);
   @include adaptiveValue('margin-bottom', 160, 40, 1000,320,1);
   .inner__title{
-    margin: 0;
+    margin: 0 ;
     @include adaptiveValue('width', 704, 250, 1300,320,1);
     @include adaptiveValue('font-size', 38, 28, 1000,320,1);
     font-weight: 700;
